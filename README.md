@@ -1,10 +1,10 @@
 # FashionOps Studio
 
-FashionOps Studio is a polished Next.js + Supabase portfolio project for fashion studios, creative teams, model booking, campaign tracking, and project/task management.
+FashionOps Studio is a polished Next.js + Supabase SaaS dashboard for fashion studios, creative teams, model booking, campaign tracking, and project/task management.
 
 It serves two purposes:
 
-- A Supabase Auth/RLS debugging proof project for protected routes, user-owned rows, server actions, and policy verification.
+- A Supabase Auth/RLS proof project for protected routes, user-owned rows, server actions, and policy verification.
 - A real-world SaaS dashboard example with premium fashion/creative UI, campaign cards, model/client profiles, image placements, and recent activity.
 
 ## Product Concept

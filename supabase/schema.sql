@@ -1,4 +1,4 @@
--- FashionOps Studio: Next.js + Supabase Auth/RLS Debug Demo
+-- FashionOps Studio: Next.js + Supabase Auth/RLS schema
 -- Run this in the Supabase SQL Editor after creating a project.
 -- It creates a simple projects/tasks model where every row belongs to auth.uid().
 

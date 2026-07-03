@@ -1,8 +1,8 @@
 {
-    "name":  "nextjs-supabase-auth-rls-debug-demo",
+    "name":  "fashionops-studio-nextjs-supabase",
     "version":  "1.0.0",
     "private":  true,
-    "description":  "A focused Next.js + Supabase Auth/RLS debugging demo for launch-readiness work.",
+    "description":  "FashionOps Studio is a polished Next.js + Supabase SaaS dashboard for fashion studio operations.",
     "scripts":  {
                     "dev":  "next dev",
                     "build":  "next build",
