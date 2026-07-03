@@ -1,2 +1,1 @@
-# nextjs-supabase-auth-rls-debug-demo
-Production-style Next.js and Supabase Auth/RLS demo with protected dashboard, PostgreSQL tables, user-scoped data access, and debugging notes for auth, RLS, and database query issues.
+This project is a small production-style demo built with Next.js and Supabase. It demonstrates email/password authentication, protected dashboard access, PostgreSQL-backed user data, Row Level Security policies, and common debugging patterns for auth, RLS, and query issues.
