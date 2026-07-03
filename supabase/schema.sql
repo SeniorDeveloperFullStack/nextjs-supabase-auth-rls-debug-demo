@@ -1,4 +1,4 @@
--- Next.js + Supabase Auth/RLS Debug Demo
+-- FashionOps Studio: Next.js + Supabase Auth/RLS Debug Demo
 -- Run this in the Supabase SQL Editor after creating a project.
 -- It creates a simple projects/tasks model where every row belongs to auth.uid().
 
@@ -59,21 +59,29 @@ create trigger trg_prevent_cross_owner_task
 before insert or update of project_id, owner_id on public.tasks
 for each row execute function public.prevent_cross_owner_task();
 
--- Create profile + starter project when a new auth user signs up.
+-- Create profile + FashionOps starter project when a new auth user signs up.
 create or replace function public.handle_new_user()
 returns trigger
 language plpgsql
 security definer
 set search_path = public
 as $$
+declare
+  starter_project_id uuid;
 begin
   insert into public.profiles (id, email)
   values (new.id, new.email)
   on conflict (id) do update set email = excluded.email;
 
   insert into public.projects (owner_id, name)
-  values (new.id, 'Launch Readiness Project')
-  on conflict do nothing;
+  values (new.id, 'Spring Capsule Launch')
+  returning id into starter_project_id;
+
+  insert into public.tasks (project_id, owner_id, title, status)
+  values
+    (starter_project_id, new.id, 'Confirm campaign styling direction', 'open'),
+    (starter_project_id, new.id, 'Review model shortlist with client', 'open'),
+    (starter_project_id, new.id, 'Package final lookbook assets', 'done');
 
   return new;
 end;

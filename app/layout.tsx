@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Supabase Auth/RLS Debug Demo",
-  description: "Next.js + Supabase proof project for auth, RLS, and query debugging."
+  title: "FashionOps Studio",
+  description: "A polished Next.js + Supabase Auth/RLS SaaS dashboard for fashion studio operations."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
