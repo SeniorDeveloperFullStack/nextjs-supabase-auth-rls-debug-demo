@@ -100,6 +100,18 @@ npm run dev
 
 6. Open the app and create two users. Each user should see only their own FashionOps starter campaign and studio tasks.
 
+## Troubleshooting
+
+### Turbopack crash on Windows
+
+If Next.js starts, loads the dashboard, and then Turbopack crashes with `FATAL: An unexpected Turbopack error occurred.`, use the Webpack fallback:
+
+```bash
+npm run dev
+```
+
+The `dev` script runs `next dev --webpack` for local stability. If the crash persists, stop any running Node/Next processes and clear the local `.next` cache before starting the dev server again.
+
 ## Debugging Checklist for a Client Codebase
 
 When a client says their app has broken auth, RLS, or wrong query results, review these areas first:

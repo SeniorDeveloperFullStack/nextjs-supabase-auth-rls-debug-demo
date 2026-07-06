@@ -1,32 +1,33 @@
 {
-    "name":  "fashionops-studio-nextjs-supabase",
-    "version":  "1.0.0",
-    "private":  true,
-    "description":  "FashionOps Studio is a polished Next.js + Supabase SaaS dashboard for fashion studio operations.",
-    "scripts":  {
-                    "dev":  "next dev",
-                    "build":  "next build",
-                    "start":  "next start",
-                    "lint":  "eslint ."
-                },
-    "dependencies":  {
-                         "@supabase/ssr":  "latest",
-                         "@supabase/supabase-js":  "latest",
-                         "next":  "latest",
-                         "react":  "latest",
-                         "react-dom":  "latest",
-                         "zod":  "latest"
-                     },
-    "devDependencies":  {
-                            "@tailwindcss/postcss":  "^4.3.2",
-                            "@types/node":  "latest",
-                            "@types/react":  "latest",
-                            "@types/react-dom":  "latest",
-                            "autoprefixer":  "latest",
-                            "eslint":  "latest",
-                            "eslint-config-next":  "latest",
-                            "postcss":  "latest",
-                            "tailwindcss":  "latest",
-                            "typescript":  "latest"
-                        }
+    "name": "fashionops-studio-nextjs-supabase",
+    "version": "1.0.0",
+    "private": true,
+    "description": "FashionOps Studio is a polished Next.js + Supabase SaaS dashboard for fashion studio operations.",
+    "scripts": {
+        "dev": "next dev --webpack",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint ."
+    },
+    "dependencies": {
+        "@supabase/ssr": "latest",
+        "@supabase/supabase-js": "latest",
+        "lucide-react": "^1.23.0",
+        "next": "latest",
+        "react": "latest",
+        "react-dom": "latest",
+        "zod": "latest"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.3.2",
+        "@types/node": "latest",
+        "@types/react": "latest",
+        "@types/react-dom": "latest",
+        "autoprefixer": "latest",
+        "eslint": "latest",
+        "eslint-config-next": "latest",
+        "postcss": "latest",
+        "tailwindcss": "latest",
+        "typescript": "latest"
+    }
 }

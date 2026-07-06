@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { AlertCircle, ArrowRight, UserPlus } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
 export function LoginForm() {
@@ -47,30 +48,36 @@ export function LoginForm() {
   return (
     <div className="space-y-5">
       <label className="block">
-        <span className="mb-2 block text-sm font-semibold text-slate-700">Email</span>
+        <span className="mb-2 block text-sm font-semibold text-[#2d241a]">Email</span>
         <input
-          className="w-full rounded-lg border border-stone-200 bg-white px-4 py-3 text-slate-950 shadow-sm outline-none ring-rose-300 transition placeholder:text-slate-400 focus:border-rose-300 focus:ring-4"
+          className="w-full rounded-lg border border-[#e7d8c2] bg-[#fffaf0] px-4 py-3.5 text-[#111827] shadow-sm outline-none ring-[#f4a3a8]/40 transition placeholder:text-[#9a8b77] focus:border-[#d9b979] focus:bg-white focus:ring-4"
           type="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           placeholder="studio@example.com"
+          autoComplete="email"
+          required
         />
       </label>
 
       <label className="block">
-        <span className="mb-2 block text-sm font-semibold text-slate-700">Password</span>
+        <span className="mb-2 block text-sm font-semibold text-[#2d241a]">Password</span>
         <input
-          className="w-full rounded-lg border border-stone-200 bg-white px-4 py-3 text-slate-950 shadow-sm outline-none ring-rose-300 transition placeholder:text-slate-400 focus:border-rose-300 focus:ring-4"
+          className="w-full rounded-lg border border-[#e7d8c2] bg-[#fffaf0] px-4 py-3.5 text-[#111827] shadow-sm outline-none ring-[#f4a3a8]/40 transition placeholder:text-[#9a8b77] focus:border-[#d9b979] focus:bg-white focus:ring-4"
           type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           placeholder="Minimum 6 characters"
+          autoComplete="current-password"
+          minLength={6}
+          required
         />
       </label>
 
       {message ? (
-        <div className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          {message}
+        <div role="alert" className="flex gap-3 rounded-lg border border-[#f4a3a8] bg-[#fff1f2] px-4 py-3 text-sm text-[#8f1d2c] shadow-sm">
+          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+          <p>{message}</p>
         </div>
       ) : null}
 
@@ -79,17 +86,31 @@ export function LoginForm() {
           type="button"
           disabled={isPending}
           onClick={() => handleSubmit("sign-in")}
-          className="rounded-lg bg-slate-950 px-4 py-3 font-semibold text-white shadow-lg shadow-slate-950/10 transition hover:bg-slate-800 disabled:opacity-60"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#07111f] px-5 py-3.5 font-semibold text-[#fffaf0] shadow-lg shadow-[#07111f]/20 transition hover:bg-[#162033] disabled:opacity-60"
         >
-          Sign in
+          {isPending ? (
+            "Working..."
+          ) : (
+            <>
+              <span>Sign in</span>
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </>
+          )}
         </button>
         <button
           type="button"
           disabled={isPending}
           onClick={() => handleSubmit("sign-up")}
-          className="rounded-lg border border-stone-300 bg-white px-4 py-3 font-semibold text-slate-900 shadow-sm transition hover:border-rose-300 hover:bg-rose-50 disabled:opacity-60"
+          className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#d9b979] bg-[#f8ead0] px-5 py-3.5 font-semibold text-[#2d241a] shadow-sm transition hover:bg-[#f3dcae] disabled:opacity-60"
         >
-          Create account
+          {isPending ? (
+            "Working..."
+          ) : (
+            <>
+              <UserPlus className="h-4 w-4" aria-hidden="true" />
+              <span>Create account</span>
+            </>
+          )}
         </button>
       </div>
     </div>

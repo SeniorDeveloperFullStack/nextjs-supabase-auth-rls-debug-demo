@@ -56,7 +56,7 @@ export async function addTask(formData: FormData) {
   });
 
   if (!parsed.success) {
-    throw new Error(parsed.error.issues[0]?.message ?? "Invalid task input");
+    redirect("/dashboard?taskError=Task%20titles%20need%20at%20least%202%20characters.");
   }
 
   const { error } = await supabase.from("tasks").insert({
